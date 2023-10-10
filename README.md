@@ -1,7 +1,20 @@
 # IEFI-Programación-II
 
-Sistema de Gestión Materia-Profesor
-<hr>
-Este proyecto consiste en crear un sistema de gestión para asignar profesores a materias. Trabajaremos con dos tablas: "Profesor" y "Materia," conectadas a través del campo "Legajo de Profesor Asignado" en la tabla "Materia."
+# Sistema de Gestión
 
+## Tablas
+### Tabla "Profesor"
+- **Legajo**
+- **Nombre/s**
+- **Apellido/s**
 
+### Tabla "Materia"
+- **Código de Materia**
+- **Nombre de Materia**
+- **Profesor Asignado**
+
+## Funciones
+- Cargar Profesor
+- Modificar Profesor
+- Cargar Materia
+- Modificar Materia

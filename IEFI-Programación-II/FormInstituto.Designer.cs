@@ -1,6 +1,6 @@
 ﻿namespace IEFI_Programación_II
 {
-    partial class Form1
+    partial class FormInstituto
     {
         /// <summary>
         ///  Required designer variable.

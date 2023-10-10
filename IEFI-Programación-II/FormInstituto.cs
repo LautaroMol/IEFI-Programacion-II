@@ -1,8 +1,8 @@
 namespace IEFI_Programación_II
 {
-    public partial class Form1 : Form
+    public partial class FormInstituto : Form
     {
-        public Form1()
+        public FormInstituto()
         {
             InitializeComponent();
         }

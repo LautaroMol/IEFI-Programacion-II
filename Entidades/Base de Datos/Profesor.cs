@@ -68,69 +68,15 @@ namespace Entidades.Base_de_Datos
         public bool getLib() { return this.Libre; }
         public string DarDatos()
         {
-            string datos = $"DNI: {Dni}\n";
-            datos += $"Nombre: {Nombres}\n";
-            datos += $"Apellido: {Apellidos}\n";
+            string datos = $"Legajo: {Legajo}\n";
+            datos += $"DNI: {Dni}\n";
+            datos += $"Nombres: {Nombres}\n";
+            datos += $"Apellidos: {Apellidos}\n";
             datos += $"Edad: {Edad}\n";
-            datos += $"Esta activo?: {(Libre ? "Activo" : "Inactivo")}";
+            datos += $"Estado: {(Libre ? "Activo" : "Inactivo")}";
 
             return datos;
         }
-        #region Propiedades
-        public string PNombre
-        {
-            set { Nombre = value; }
-            get { return Nombre; }
-        }
-
-        public string PApellido
-        {
-            set { Apellido = value; }
-            get { return Apellido; }
-        }
-
-        public int PLegajo
-        {
-            get { return Legajo; }
-        }
-        public int PDni
-        {
-            get { return Dni; }
-        }
-        public bool PLibre
-        {
-            set { Libre = value; }
-            get { return Libre; }
-        }
-
-        public DateTime PFechaNamiciento
-        {
-            get { return FechaNacimiento; }
-        }
-
-        #endregion
-
-        #region Constructores
-
-        public Profesor()
-        {
-            
-        }
-
-        public Profesor(int leg, string nombre, string apellido, int dni)
-        {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            Dni = dni;
-            Libre = true;
-            FechaNacimiento = DateTime.MinValue;
-            this.Legajo = leg;
-        }
-        #endregion
-
-        #region Metodos
-      
-        #endregion
 
     }
 }

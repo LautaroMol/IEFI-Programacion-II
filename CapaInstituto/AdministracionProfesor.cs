@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaInstituto
 {
-    public class LisInstituto
+    public class AdministracionProfesor
     {
     }
 }

@@ -49,6 +49,7 @@
             btnProf.TabIndex = 1;
             btnProf.Text = "Abm Profesores";
             btnProf.UseVisualStyleBackColor = true;
+            btnProf.Click += btnProf_Click;
             // 
             // FormInstituto
             // 

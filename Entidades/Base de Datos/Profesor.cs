@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,23 +16,66 @@ namespace Entidades.Base_de_Datos
         private string Nombres;
         private string Apellidos;
         private bool Libre;
+        private int Edad;
         //Constructores
 
         public Profesor() { }
 
-        public Profesor(int legajo, int dni, string nombres, string apellidos, bool libre, DateTime fecnac)
+        public Profesor(int Legajo, int Dni, string Nombres, string Apellidos, bool Libre, DateTime fecnac)
         {
-            this.Legajo = legajo;
-            this.Dni = dni;
-            this.Nombres = nombres;
-            this.Apellidos = apellidos;
-            this.Libre = libre;
+            this.Legajo = Legajo;
+            this.Dni = Dni;
+            this.Nombres = Nombres;
+            this.Apellidos = Apellidos;
+            this.Libre = Libre;
             DateTime fecha = DateTime.Now;
-            int edad = fecha.Year - fecnac.Year;
-            if (fecnac.Month > fecha.Month) { --edad; }
+            Edad = fecha.Year - fecnac.Year;
+            if (fecnac.Month > fecha.Month) { --Edad; }
         }
 
+        public Profesor(int Legajo, int Dni, string Nombres, string Apellidos, bool Libre, int edad)
+        {
+            this.Legajo = Legajo;
+            this.Dni = Dni;
+            this.Nombres = Nombres;
+            this.Apellidos = Apellidos;
+            this.Libre = Libre;
+            Edad = edad;
+        }
 
+        public void Agregar(int legajo, int dni, string nombres, string apellidos, bool libre, DateTime fecnac)
+        {
+            Legajo = legajo;
+            Dni = dni;
+            Nombres = nombres;
+            Apellidos = apellidos;
+            Libre = libre;
+            DateTime fecha = DateTime.Now;
+            Edad = fecnac.Year - fecha.Year;
+            if (fecnac.Month > fecha.Month) { --Edad; }
+        }
+
+        //gets
+        public int getLeg()
+        {
+            return this.Legajo;
+        }
+
+        public int getDni() { return this.Dni; }
+        public string getNom() { return this.Nombres; }
+        public string getAp() { return this.Apellidos; }
+        public int getEd() { return this.Edad; }
+        public bool getLib() { return this.Libre; }
+        public string DarDatos()
+        {
+            string datos = $"DNI: {Dni}\n";
+            datos += $"Nombre: {Nombres}\n";
+            datos += $"Apellido: {Apellidos}\n";
+            datos += $"Edad: {Edad}\n";
+            datos += $"Esta activo?: {(Libre ? "Activo" : "Inactivo")}";
+
+            return datos;
+        }
         #region Propiedades
         public string PNombre
         {

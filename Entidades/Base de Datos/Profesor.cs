@@ -8,16 +8,27 @@ namespace Entidades.Base_de_Datos
 {
     public class Profesor
     {
-        #region Atributos
         private int Legajo;
         private int Dni;
+        private string Nombres;
+        private string Apellidos;
         private bool Libre;
-        private string Nombre;
-        private string Apellido;
-        private DateTime FechaNacimiento;
-   
-     
-        #endregion
+        //Constructores
+
+        public Profesor() { }
+
+        public Profesor(int legajo, int dni, string nombres, string apellidos, bool libre, DateTime fecnac)
+        {
+            this.Legajo = legajo;
+            this.Dni = dni;
+            this.Nombres = nombres;
+            this.Apellidos = apellidos;
+            this.Libre = libre;
+            DateTime fecha = DateTime.Now;
+            int edad = fecha.Year - fecnac.Year;
+            if (fecnac.Month > fecha.Month) { --edad; }
+        }
+
 
         #region Propiedades
         public string PNombre

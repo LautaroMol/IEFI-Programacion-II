@@ -28,12 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnMat = new Button();
+            btnProf = new Button();
+            SuspendLayout();
+            // 
+            // btnMat
+            // 
+            btnMat.Location = new Point(104, 75);
+            btnMat.Name = "btnMat";
+            btnMat.Size = new Size(129, 81);
+            btnMat.TabIndex = 0;
+            btnMat.Text = "Abm Materias";
+            btnMat.UseVisualStyleBackColor = true;
+            // 
+            // btnProf
+            // 
+            btnProf.Location = new Point(104, 258);
+            btnProf.Name = "btnProf";
+            btnProf.Size = new Size(129, 83);
+            btnProf.TabIndex = 1;
+            btnProf.Text = "Abm Profesores";
+            btnProf.UseVisualStyleBackColor = true;
+            // 
+            // FormInstituto
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(389, 450);
+            Controls.Add(btnProf);
+            Controls.Add(btnMat);
+            Name = "FormInstituto";
+            Text = "Menu";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnMat;
+        private Button btnProf;
     }
 }

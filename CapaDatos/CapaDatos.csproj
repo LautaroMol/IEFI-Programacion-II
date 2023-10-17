@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionProfesores.cs" />
     <Compile Include="DatosdeConexion.cs" />
     <Compile Include="AdministracionInsituto.cs" />
+    <Compile Include="DatosDeConexionL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

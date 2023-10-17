@@ -5,30 +5,25 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace CapaDatos
 {
-    public class DatosdeConexion
+    public class DatosDeConexionL
     {
         protected OleDbConnection conexion;
-        public string CadenadeConexion;
+        public string CadenadeConexionL = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ibañez\Desktop\BDComputadora.accdb";
 
-        public DatosdeConexion()
+
+        public DatosDeConexionL()
         {
-            string carpetaDocumentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string nombreBaseDatos = "BDComputadora.accdb";
-            string rutaCompleta = Path.Combine(carpetaDocumentos, nombreBaseDatos);
-            CadenadeConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={rutaCompleta}";
-            conexion = new OleDbConnection(CadenadeConexion);
+            conexion = new OleDbConnection(CadenadeConexionL);
 
         }
         public void Abrirconexion()
         {
             try
             {
-                if (conexion.State == ConnectionState.Broken || conexion.State ==
- ConnectionState.Closed)
+                if (conexion.State == ConnectionState.Broken || conexion.State == ConnectionState.Closed)
                     conexion.Open();
 
             }
@@ -51,7 +46,5 @@ namespace CapaDatos
                 throw new Exception("Error al tratar de cerrar la conexión", error);
             }
         }
-
     }
 }
-

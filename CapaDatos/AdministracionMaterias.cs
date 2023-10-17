@@ -3,11 +3,12 @@ using System;
 using System.Data;
 using System.Data.OleDb;
 
-
 //namespace CapaDatos
 //{
 //    public class AdministracionMaterias : DatosdeConexion
 //    {
+
+//        // Método para realizar operaciones de alta, baja y modificación en la base de datos.
 //        public int abmMaterias(string accion, Materia objMateria)
 //        {
 //            int result = -1; // Inicializamos result en -1 para controlar la operación
@@ -17,10 +18,11 @@ using System.Data.OleDb;
 
 //            try
 //            {
+//                // Establecemos una conexión con la base de datos
 //                using (OleDbConnection conn = new OleDbConnection(conexion))
 //                using (OleDbCommand cmd = new OleDbCommand())
 //                {
-//                    conn.Open();
+//                    conn.Open(); // Abrimos la conexión a la base de datos
 //                    cmd.Connection = conn;
 
 //                    // Verificamos la acción y construimos la consulta SQL correspondiente
@@ -55,13 +57,13 @@ using System.Data.OleDb;
 //            }
 //            catch (Exception ex)
 //            {
-//                // Manejo de errores: lanzamos una excepción con un mensaje descriptivo
+//                // Manejo de errores: lanzamos una excepción con un mensaje
 //                throw new Exception("Error al operar con las materias", ex);
 //            }
 
 //            return result; // Devolvemos el resultado de la operación
 //        }
-
+//        // Método para obtener un conjunto de datos de materias según el filtro especificado.
 //        public DataSet listadoMaterias(string codigo)
 //        {
 //            string query = string.Empty;
@@ -79,21 +81,23 @@ using System.Data.OleDb;
 
 //            try
 //            {
+//                // Establecemos una conexión con la base de datos
 //                using (OleDbConnection conn = new OleDbConnection(conexion))
 //                using (OleDbCommand cmd = new OleDbCommand(query, conn))
 //                using (OleDbDataAdapter da = new OleDbDataAdapter(cmd))
 //                {
 //                    if (codigo != "todos")
 //                    {
-//                        cmd.Parameters.AddWithValue("@Codigo", codigo);
+//                        cmd.Parameters.AddWithValue("@Codigo", int.Parse(codigo));
 //                    }
 
-//                    conn.Open();
-//                    da.Fill(ds);
+//                    conn.Open(); // Abrimos la conexión a la base de datos
+//                    da.Fill(ds);  // Rellenamos el conjunto de datos con los resultados de la consulta
 //                }
 //            }
 //            catch (Exception e)
 //            {
+//                // Manejo de errores: lanzamos una excepción con un mensaje
 //                throw new Exception("Error al listar Materias", e);
 //            }
 

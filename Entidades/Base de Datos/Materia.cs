@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Entidades.Base_de_Datos
 {
     public class Materia
@@ -14,6 +13,32 @@ namespace Entidades.Base_de_Datos
         private int LegajoProfesor;
         private bool Estado;
         private string Nombre;
+        #endregion
+
+        #region Propiedades
+        public string PNombre
+        {
+            set { Nombre = value; }
+            get { return Nombre; }
+        }
+
+        public int PLegajoProfesor
+        {
+            set { LegajoProfesor = value; }
+            get { return LegajoProfesor; }
+        }
+
+        public int PCodigo
+        {
+            set { Codigo = value; }
+            get { return Codigo; }
+        }
+
+        public bool PEstado
+        {
+            set { Estado = value; }
+            get { return Estado; }
+        }
         #endregion
 
         #region Constructores
@@ -29,43 +54,12 @@ namespace Entidades.Base_de_Datos
         #endregion
 
         #region Métodos
-
-        public void EstablecerNombre(string nombre)
-        {
-            this.Nombre = nombre;
-        }
-
-        public string ObtenerNombre()
-        {
-            return this.Nombre;
-        }
-
-        public int ObtenerLegajoProfesor()
-        {
-            return this.LegajoProfesor;
-        }
-
-        public int ObtenerCodigo()
-        {
-            return this.Codigo;
-        }
-
-        public void EstablecerEstado(bool estado)
-        {
-            this.Estado = estado;
-        }
-
-        public bool ObtenerEstado()
-        {
-            return this.Estado;
-        }
-
         public string DarDatos()
         {
-            string datos = $"Código: {ObtenerCodigo()}\n";
-            datos += $"Nombre: {ObtenerNombre()}\n";
-            datos += $"Legajo del Profesor: {ObtenerLegajoProfesor()}\n";
-            datos += $"Estado: {(ObtenerEstado() ? "Activa" : "Inactiva")}";
+            string datos = $"Código: {PCodigo}\n";
+            datos += $"Nombre: {PNombre}\n";
+            datos += $"Legajo del Profesor: {PLegajoProfesor}\n";
+            datos += $"Estado: {(PEstado ? "Activa" : "Inactiva")}";
             return datos;
         }
         #endregion

@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AdministracionProfesores.cs" />
     <Compile Include="DatosdeConexion.cs" />
-    <Compile Include="AdministracionInsituto.cs" />
+    <Compile Include="AdministracionMaterias.cs" />
     <Compile Include="DatosDeConexionL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

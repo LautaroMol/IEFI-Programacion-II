@@ -58,9 +58,18 @@ namespace Entidades.Base_de_Datos
         }
         #endregion
 
-        #region Metodos
-
-        #endregion
-
+        #region Métodos
+        public string DarDatos()
+    {
+        string datos = $"Código: {Codigo}\n";
+        datos += $"Nombre: {Nombre}\n";
+        datos += $"Legajo del Profesor: {LegajoProfesor}\n";
+        datos += $"Estado: {(Estado ? "Activa" : "Inactiva")}";
+        return datos;
     }
+
+
+    #endregion
+}
+
 }

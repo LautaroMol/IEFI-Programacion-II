@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,63 +14,60 @@ namespace Entidades.Base_de_Datos
         private int LegajoProfesor;
         private bool Estado;
         private string Nombre;
-
-
-        #endregion
-
-        #region Propiedades
-        public string PNombre
-        {
-            set { Nombre = value; }
-            get { return Nombre; }
-        }
-
-
-        public int PLegajoProfesor
-        {
-            get { return LegajoProfesor; }
-        }
-        public int PCodigo
-        {
-            get { return Codigo; }
-        }
-        public bool PEstado
-        {
-            set { Estado = value; }
-            get { return Estado; }
-        }
-
-
         #endregion
 
         #region Constructores
-
-        public Materia()
-        {
-
-        }
+        public Materia() { }
 
         public Materia(int cod, string nombre, int legajoprof)
         {
+            this.Codigo = cod;
             this.Nombre = nombre;
             this.LegajoProfesor = legajoprof;
-            this.Codigo = cod;
-            Estado = true;
+            this.Estado = true;
         }
         #endregion
 
         #region Métodos
+
+        public void EstablecerNombre(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+
+        public string ObtenerNombre()
+        {
+            return this.Nombre;
+        }
+
+        public int ObtenerLegajoProfesor()
+        {
+            return this.LegajoProfesor;
+        }
+
+        public int ObtenerCodigo()
+        {
+            return this.Codigo;
+        }
+
+        public void EstablecerEstado(bool estado)
+        {
+            this.Estado = estado;
+        }
+
+        public bool ObtenerEstado()
+        {
+            return this.Estado;
+        }
+
         public string DarDatos()
-    {
-        string datos = $"Código: {Codigo}\n";
-        datos += $"Nombre: {Nombre}\n";
-        datos += $"Legajo del Profesor: {LegajoProfesor}\n";
-        datos += $"Estado: {(Estado ? "Activa" : "Inactiva")}";
-        return datos;
+        {
+            string datos = $"Código: {ObtenerCodigo()}\n";
+            datos += $"Nombre: {ObtenerNombre()}\n";
+            datos += $"Legajo del Profesor: {ObtenerLegajoProfesor()}\n";
+            datos += $"Estado: {(ObtenerEstado() ? "Activa" : "Inactiva")}";
+            return datos;
+        }
+        #endregion
     }
-
-
-    #endregion
-}
-
 }

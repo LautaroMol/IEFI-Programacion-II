@@ -44,6 +44,7 @@
             checkBox1 = new CheckBox();
             dataGridView1 = new DataGridView();
             btnGuardar = new Button();
+            btnCargar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -194,6 +195,17 @@
             btnGuardar.TabIndex = 16;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnCargar
+            // 
+            btnCargar.Location = new Point(322, 444);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(75, 23);
+            btnCargar.TabIndex = 17;
+            btnCargar.Text = "Cargar";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
             // 
             // FormProfe
             // 
@@ -202,6 +214,7 @@
             AutoSize = true;
             ClientSize = new Size(1017, 517);
             ControlBox = false;
+            Controls.Add(btnCargar);
             Controls.Add(btnGuardar);
             Controls.Add(dataGridView1);
             Controls.Add(checkBox1);
@@ -244,5 +257,6 @@
         private CheckBox checkBox1;
         private DataGridView dataGridView1;
         private Button btnGuardar;
+        private Button btnCargar;
     }
 }

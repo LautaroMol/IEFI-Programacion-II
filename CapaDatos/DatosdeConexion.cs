@@ -17,7 +17,7 @@ namespace CapaDatos
         public DatosdeConexion()
         {
             string carpetaDocumentos = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string nombreBaseDatos = "BDComputadora.accdb";
+            string nombreBaseDatos = "IEFI2.accdb";
             string rutaCompleta = Path.Combine(carpetaDocumentos, nombreBaseDatos);
             CadenadeConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={rutaCompleta}";
             conexion = new OleDbConnection(CadenadeConexion);

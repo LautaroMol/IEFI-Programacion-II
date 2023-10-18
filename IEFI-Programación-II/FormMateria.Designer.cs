@@ -30,7 +30,7 @@
         {
             this.Btn_Cargar = new System.Windows.Forms.Button();
             this.Btn_Guardar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv_Materia = new System.Windows.Forms.DataGridView();
             this.Checkbox_Estado = new System.Windows.Forms.CheckBox();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Txt_Legajo = new System.Windows.Forms.TextBox();
@@ -41,7 +41,9 @@
             this.Lbl_Legajo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Lbl_Nombre = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Btn_Atras = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Materia)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Cargar
@@ -52,6 +54,7 @@
             this.Btn_Cargar.TabIndex = 34;
             this.Btn_Cargar.Text = "Cargar";
             this.Btn_Cargar.UseVisualStyleBackColor = true;
+     
             // 
             // Btn_Guardar
             // 
@@ -62,14 +65,14 @@
             this.Btn_Guardar.Text = "Guardar";
             this.Btn_Guardar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // Dgv_Materia
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(395, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 271);
-            this.dataGridView1.TabIndex = 32;
+            this.Dgv_Materia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Materia.Location = new System.Drawing.Point(395, 54);
+            this.Dgv_Materia.Name = "Dgv_Materia";
+            this.Dgv_Materia.RowTemplate.Height = 25;
+            this.Dgv_Materia.Size = new System.Drawing.Size(557, 271);
+            this.Dgv_Materia.TabIndex = 32;
             // 
             // Checkbox_Estado
             // 
@@ -164,15 +167,38 @@
             this.Lbl_Nombre.TabIndex = 18;
             this.Lbl_Nombre.Text = "Nombre:";
             // 
+            // Btn_Atras
+            // 
+            this.Btn_Atras.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Btn_Atras.Location = new System.Drawing.Point(813, 12);
+            this.Btn_Atras.Name = "Btn_Atras";
+            this.Btn_Atras.Size = new System.Drawing.Size(86, 32);
+            this.Btn_Atras.TabIndex = 35;
+            this.Btn_Atras.Text = "Atras";
+            this.Btn_Atras.UseVisualStyleBackColor = true;
+            
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(920, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 32);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "X";
+            // 
             // FormMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(997, 405);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Btn_Atras);
             this.Controls.Add(this.Btn_Cargar);
             this.Controls.Add(this.Btn_Guardar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgv_Materia);
             this.Controls.Add(this.Checkbox_Estado);
             this.Controls.Add(this.Txt_Codigo);
             this.Controls.Add(this.Txt_Legajo);
@@ -185,7 +211,7 @@
             this.Controls.Add(this.Lbl_Nombre);
             this.Name = "FormMateria";
             this.Text = "Materias";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Materia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +221,7 @@
 
         private Button Btn_Cargar;
         private Button Btn_Guardar;
-        private DataGridView dataGridView1;
+        private DataGridView Dgv_Materia;
         private CheckBox Checkbox_Estado;
         private TextBox Txt_Codigo;
         private TextBox Txt_Legajo;
@@ -206,5 +232,7 @@
         private Label Lbl_Legajo;
         private Label label4;
         private Label Lbl_Nombre;
+        private Button Btn_Atras;
+        private Label label2;
     }
 }

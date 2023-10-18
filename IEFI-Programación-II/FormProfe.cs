@@ -168,6 +168,7 @@ namespace IEFI_Programación_II.FormProfesor
         {
             bool band = false;
             DataSet ds = objProf.listadoProf("todos");
+
             if (txtMod.Text!=""&& txtDni.Text!="" && txtNom.Text!="" && txtAp.Text!="" && txtleg.Text == "")
             {
                 Profesor profMod = new Profesor(int.Parse(txtMod.Text), int.Parse(txtDni.Text), txtNom.Text.ToString(),

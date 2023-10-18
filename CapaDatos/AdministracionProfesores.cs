@@ -18,19 +18,16 @@ namespace CapaDatos
 
             if (accion == "Alta")
             {
-                orden = "update Profesores SET Nombres = '" + objProfesor.getNom() + "', Apellidos = '"
-                + objProfesor.getAp() + "', Edad = " + objProfesor.getEd() + ", Libre = " +
-                objProfesor.getLib() + " WHERE Legajo = " + objProfesor.getLeg() + ";";
+                orden = "insert into Profesores values (" + objProfesor.getLeg() + ","
+                    + objProfesor.getDni() + ",'" + objProfesor.getNom() + "','" + objProfesor.getAp() + "',"
+                    + objProfesor.getLib() + "," + objProfesor.getEd() + ");";
             }
 
             if (accion == "Modificar")
             {
-                orden = "UPDATE Profesores SET Dni = '" + objProfesor.getDni() +
-            "', Nombre = '" + objProfesor.getNom() +
-            "', Apellido = '" + objProfesor.getAp() +
-            "', Edad = '" + objProfesor.getEd() +
-            "', Libre = " + objProfesor.getLib() +
-            " WHERE Legajo = '" + objProfesor.getLeg() + "';";
+                orden = "update Profesores SET Nombres = '" + objProfesor.getNom() + "', Apellidos = '"
+                + objProfesor.getAp() + "', Edad = " + objProfesor.getEd() + ", Libre = " +
+                objProfesor.getLib() + " WHERE Legajo = " + objProfesor.getLeg() + ";";
             }
 
             if (accion == "Borrar")

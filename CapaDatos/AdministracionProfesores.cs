@@ -18,17 +18,19 @@ namespace CapaDatos
 
             if (accion == "Alta")
             {
-                orden = "insert into Profesores values (" + objProfesor.getLeg() + ","
-                    + objProfesor.getDni() + ",'" + objProfesor.getNom() + "','" + objProfesor.getAp() + "',"
-                    + objProfesor.getEd() + "," + objProfesor.getLib() + ");";
+                orden = "update Profesores SET Nombres = '" + objProfesor.getNom() + "', Apellidos = '"
+                + objProfesor.getAp() + "', Edad = " + objProfesor.getEd() + ", Libre = " +
+                objProfesor.getLib() + " WHERE Legajo = " + objProfesor.getLeg() + ";";
             }
 
             if (accion == "Modificar")
             {
-                orden = "update Profesores SET Dni = '" + objProfesor.getDni() + "', Nombre = '"
-                    + objProfesor.getNom() + "', Apellido = '" + objProfesor.getAp() + "', Edad = "
-                    + objProfesor.getEd() + ", Libre = " + (objProfesor.getLib() ? 1 : 0) + " WHERE Legajo = "
-                    + objProfesor.getLeg() + ";";
+                orden = "UPDATE Profesores SET Dni = '" + objProfesor.getDni() +
+            "', Nombre = '" + objProfesor.getNom() +
+            "', Apellido = '" + objProfesor.getAp() +
+            "', Edad = '" + objProfesor.getEd() +
+            "', Libre = " + objProfesor.getLib() +
+            " WHERE Legajo = '" + objProfesor.getLeg() + "';";
             }
 
             if (accion == "Borrar")
@@ -36,15 +38,13 @@ namespace CapaDatos
                 orden = "delete from Profesores WHERE Legajo = " + objProfesor.getLeg();
             }
 
-            // Aquí deberías ejecutar la consulta SQL y manejar el resultado según tu entorno de desarrollo.
-
             OleDbCommand cmd = new OleDbCommand(orden, conexion);
             try
             {
                 Abrirconexion();
                 result = cmd.ExecuteNonQuery();
             }
-            catch (Exception ex) { throw new Exception("Error al tratar de operar con los alumnos", ex); }
+            catch (Exception ex) { throw new Exception("Error al tratar de operar con los Profesores", ex); }
             finally { Cerrarconexion(); cmd.Dispose(); }
             return result;
         }

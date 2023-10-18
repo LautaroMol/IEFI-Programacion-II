@@ -28,9 +28,9 @@ namespace Entidades.Base_de_Datos
             this.Nombres = Nombres;
             this.Apellidos = Apellidos;
             this.Libre = Libre;
-            DateTime fecha = DateTime.Now;
-            Edad = fecha.Year - fecnac.Year;
-            if (fecnac.Month > fecha.Month) { --Edad; }
+            DateTime Fecha = DateTime.Now;
+            this.Edad = Fecha.Year - fecnac.Year; // Actualizar la propiedad Edad
+            if (fecnac.Month > Fecha.Month) { this.Edad--; }
         }
 
         public Profesor(int Legajo, int Dni, string Nombres, string Apellidos, bool Libre, int edad)
@@ -40,7 +40,7 @@ namespace Entidades.Base_de_Datos
             this.Nombres = Nombres;
             this.Apellidos = Apellidos;
             this.Libre = Libre;
-            Edad = edad;
+            this.Edad = edad;
         }
 
         public void Agregar(int legajo, int dni, string nombres, string apellidos, bool libre, DateTime fecnac)
@@ -51,8 +51,8 @@ namespace Entidades.Base_de_Datos
             Apellidos = apellidos;
             Libre = libre;
             DateTime fecha = DateTime.Now;
-            Edad = fecnac.Year - fecha.Year;
-            if (fecnac.Month > fecha.Month) { --Edad; }
+            this.Edad = fecnac.Year - fecha.Year; // Actualizar la propiedad Edad
+            if (fecnac.Month > fecha.Month) { this.Edad--; }
         }
 
         //gets
@@ -64,7 +64,7 @@ namespace Entidades.Base_de_Datos
         public int getDni() { return this.Dni; }
         public string getNom() { return this.Nombres; }
         public string getAp() { return this.Apellidos; }
-        public int getEd() { return this.Edad; }
+        public int getEd() { return Edad; }
         public bool getLib() { return this.Libre; }
         public string DarDatos()
         {

@@ -45,6 +45,10 @@
             dataGridView1 = new DataGridView();
             btnGuardar = new Button();
             btnCargar = new Button();
+            btnllenar = new Button();
+            btnborrar = new Button();
+            txtMod = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(986, -2);
+            label2.Location = new Point(1100, -1);
             label2.Name = "label2";
             label2.Size = new Size(32, 32);
             label2.TabIndex = 1;
@@ -102,7 +106,7 @@
             // button1
             // 
             button1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(870, -2);
+            button1.Location = new Point(984, -1);
             button1.Name = "button1";
             button1.Size = new Size(86, 32);
             button1.TabIndex = 6;
@@ -166,7 +170,7 @@
             // 
             dateTimePicker1.Location = new Point(255, 335);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.Size = new Size(260, 23);
             dateTimePicker1.TabIndex = 13;
             // 
             // checkBox1
@@ -180,11 +184,16 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(566, 69);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(439, 231);
+            dataGridView1.Size = new Size(549, 339);
             dataGridView1.TabIndex = 15;
             // 
             // btnGuardar
@@ -207,13 +216,55 @@
             btnCargar.UseVisualStyleBackColor = true;
             btnCargar.Click += btnCargar_Click;
             // 
+            // btnllenar
+            // 
+            btnllenar.Location = new Point(413, 444);
+            btnllenar.Name = "btnllenar";
+            btnllenar.Size = new Size(75, 23);
+            btnllenar.TabIndex = 18;
+            btnllenar.Text = "Llenar";
+            btnllenar.UseVisualStyleBackColor = true;
+            btnllenar.Click += btnllenar_Click;
+            // 
+            // btnborrar
+            // 
+            btnborrar.Location = new Point(508, 444);
+            btnborrar.Name = "btnborrar";
+            btnborrar.Size = new Size(75, 23);
+            btnborrar.TabIndex = 19;
+            btnborrar.Text = "Borrar";
+            btnborrar.UseVisualStyleBackColor = true;
+            btnborrar.Click += btnborrar_Click;
+            // 
+            // txtMod
+            // 
+            txtMod.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtMod.Location = new Point(255, 479);
+            txtMod.Name = "txtMod";
+            txtMod.Size = new Size(142, 26);
+            txtMod.TabIndex = 20;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(413, 479);
+            button2.Name = "button2";
+            button2.Size = new Size(132, 23);
+            button2.TabIndex = 21;
+            button2.Text = "Actualizar legajo";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // FormProfe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1017, 517);
+            ClientSize = new Size(1127, 517);
             ControlBox = false;
+            Controls.Add(button2);
+            Controls.Add(txtMod);
+            Controls.Add(btnborrar);
+            Controls.Add(btnllenar);
             Controls.Add(btnCargar);
             Controls.Add(btnGuardar);
             Controls.Add(dataGridView1);
@@ -258,5 +309,9 @@
         private DataGridView dataGridView1;
         private Button btnGuardar;
         private Button btnCargar;
+        private Button btnllenar;
+        private Button btnborrar;
+        private TextBox txtMod;
+        private Button button2;
     }
 }

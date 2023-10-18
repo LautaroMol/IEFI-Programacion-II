@@ -11,13 +11,12 @@ namespace CapaDatos
     public class DatosDeConexionL
     {
         protected OleDbConnection conexion;
-        public string CadenadeConexionL = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ibañez\Desktop\BDComputadora.accdb";
+        public string CadenadeConexionL = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""D:\Documentos\IEFI2.accdb""";
 
 
         public DatosDeConexionL()
         {
             conexion = new OleDbConnection(CadenadeConexionL);
-
         }
         public void Abrirconexion()
         {

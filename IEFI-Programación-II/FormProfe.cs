@@ -28,6 +28,9 @@ namespace IEFI_Programación_II.FormProfesor
             dataGridView1.Columns.Add("Apellidos", "Apellidos");
             dataGridView1.Columns.Add("Libre", "Libre");
             dataGridView1.Columns.Add("Edad", "Edad");
+
+            ConfigurarDataGridView();
+            LlenarDGV();
         }
 
         private void LlenarDGV()
@@ -43,6 +46,35 @@ namespace IEFI_Programación_II.FormProfesor
                 }
             }
         }
+
+        private void ConfigurarDataGridView()
+        {
+            // Resto del código para configurar las columnas como lo tienes actualmente
+
+            // Agregar un manejador de eventos CellFormatting a la columna "Libre"
+            dataGridView1.CellFormatting += DataGridViewCellFormatting;
+        }
+
+        private void DataGridViewCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Libre"].Index && e.RowIndex >= 0)
+            {
+                if (e.Value != null && e.Value is string)
+                {
+                    if (e.Value.ToString().ToLower() == "true")
+                    {
+                        e.Value = "activo";
+                        e.FormattingApplied = true;
+                    }
+                    else if (e.Value.ToString().ToLower() == "false")
+                    {
+                        e.Value = "inactivo";
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+        }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -182,6 +214,7 @@ namespace IEFI_Programación_II.FormProfesor
                         band = true;
                     }
                 }
+                LlenarDGV();
                 if (!band) { MessageBox.Show("no se encontro al profesor"); }
             }
             else { MessageBox.Show("use el formato correcto, llene el campo de abajo y el resto de campos"); }

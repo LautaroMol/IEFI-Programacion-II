@@ -9,59 +9,38 @@ namespace Entidades.Base_de_Datos
     public class Materia
     {
         #region Atributos
-        private int Codigo;
-        private int LegajoProfesor;
-        private bool Estado;
-        private string Nombre;
+        private int codigo;
+        private int legajoProfesor;
+        private bool estado;
+        private string nombre;
+        private string apellido;
         #endregion
 
         #region Propiedades
-        public string PNombre
-        {
-            set { Nombre = value; }
-            get { return Nombre; }
-        }
-
-        public int PLegajoProfesor
-        {
-            set { LegajoProfesor = value; }
-            get { return LegajoProfesor; }
-        }
-
-        public int PCodigo
-        {
-            set { Codigo = value; }
-            get { return Codigo; }
-        }
-
-        public bool PEstado
-        {
-            set { Estado = value; }
-            get { return Estado; }
-        }
+        public int Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int LegajoProfesor { get; set; }
+        public bool Estado { get; set; }
         #endregion
 
         #region Constructores
         public Materia() { }
 
-        public Materia(int cod, string nombre, int legajoprof)
+        public Materia(int cod, string nombres, int legajoprofes, string apellidos)
         {
-            this.Codigo = cod;
-            this.Nombre = nombre;
-            this.LegajoProfesor = legajoprof;
-            this.Estado = true;
+            Codigo = cod;
+            Nombre = nombres;
+            LegajoProfesor = legajoprofes;
+            Apellido = apellidos;
+            Estado = true; // Por defecto, una materia se crea como activa
         }
         #endregion
 
         #region Métodos
-        public string DarDatos()
-        {
-            string datos = $"Código: {PCodigo}\n";
-            datos += $"Nombre: {PNombre}\n";
-            datos += $"Legajo del Profesor: {PLegajoProfesor}\n";
-            datos += $"Estado: {(PEstado ? "Activa" : "Inactiva")}";
-            return datos;
-        }
+        // Esta entidad se enfoca en representar la estructura de datos de una materia y no contiene lógica de negocio. Por eso no contiene métodos. 
         #endregion
+
     }
+
 }

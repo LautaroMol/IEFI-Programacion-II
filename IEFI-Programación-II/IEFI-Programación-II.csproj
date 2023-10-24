@@ -10,12 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CapaInstituto\CapaInstituto.csproj" />
-    <ProjectReference Include="..\Entidades\Entidades.csproj" />
+    <Compile Remove="FormMateria\**" />
+    <EmbeddedResource Remove="FormMateria\**" />
+    <None Remove="FormMateria\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="FormMateria\" />
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj" />
+    <ProjectReference Include="..\CapaInstituto\CapaInstituto.csproj" />
+    <ProjectReference Include="..\Entidades\Entidades.csproj" />
   </ItemGroup>
 
   <ItemGroup>

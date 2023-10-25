@@ -28,205 +28,205 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btn_Cargar = new System.Windows.Forms.Button();
-            this.Dgv_Materias = new System.Windows.Forms.DataGridView();
-            this.Checkbox_Estado = new System.Windows.Forms.CheckBox();
-            this.Txt_Codigo = new System.Windows.Forms.TextBox();
-            this.Txt_Legajo = new System.Windows.Forms.TextBox();
-            this.Txt_Nombre = new System.Windows.Forms.TextBox();
-            this.Lbl_Estado = new System.Windows.Forms.Label();
-            this.Lbl_Codigo = new System.Windows.Forms.Label();
-            this.Lbl_Legajo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Lbl_Nombre = new System.Windows.Forms.Label();
-            this.Btn_Atras = new System.Windows.Forms.Button();
-            this.Lbl_Cruz = new System.Windows.Forms.Label();
-            this.Btn_Alegajo = new System.Windows.Forms.Button();
-            this.Txt_Alegajo = new System.Windows.Forms.TextBox();
-            this.Btn_Borrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Materias)).BeginInit();
-            this.SuspendLayout();
+            Btn_Cargar = new Button();
+            Dgv_Materias = new DataGridView();
+            Checkbox_Estado = new CheckBox();
+            Txt_Codigo = new TextBox();
+            Txt_Legajo = new TextBox();
+            Txt_Nombre = new TextBox();
+            Lbl_Estado = new Label();
+            Lbl_Codigo = new Label();
+            Lbl_Legajo = new Label();
+            label4 = new Label();
+            Lbl_Nombre = new Label();
+            Btn_Atras = new Button();
+            Lbl_Cruz = new Label();
+            Btn_Alegajo = new Button();
+            Txt_Alegajo = new TextBox();
+            Btn_Borrar = new Button();
+            ((System.ComponentModel.ISupportInitialize)Dgv_Materias).BeginInit();
+            SuspendLayout();
             // 
             // Btn_Cargar
             // 
-            this.Btn_Cargar.Location = new System.Drawing.Point(363, 331);
-            this.Btn_Cargar.Name = "Btn_Cargar";
-            this.Btn_Cargar.Size = new System.Drawing.Size(75, 32);
-            this.Btn_Cargar.TabIndex = 34;
-            this.Btn_Cargar.Text = "Cargar";
-            this.Btn_Cargar.UseVisualStyleBackColor = true;
-            this.Btn_Cargar.Click += new System.EventHandler(this.Btn_Cargar_Click);
+            Btn_Cargar.Location = new Point(363, 331);
+            Btn_Cargar.Name = "Btn_Cargar";
+            Btn_Cargar.Size = new Size(75, 32);
+            Btn_Cargar.TabIndex = 34;
+            Btn_Cargar.Text = "Cargar";
+            Btn_Cargar.UseVisualStyleBackColor = true;
+            Btn_Cargar.Click += Btn_Cargar_Click;
             // 
             // Dgv_Materias
             // 
-            this.Dgv_Materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_Materias.Location = new System.Drawing.Point(353, 54);
-            this.Dgv_Materias.Name = "Dgv_Materias";
-            this.Dgv_Materias.RowTemplate.Height = 25;
-            this.Dgv_Materias.Size = new System.Drawing.Size(413, 271);
-            this.Dgv_Materias.TabIndex = 32;
+            Dgv_Materias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Dgv_Materias.Location = new Point(353, 54);
+            Dgv_Materias.Name = "Dgv_Materias";
+            Dgv_Materias.RowTemplate.Height = 25;
+            Dgv_Materias.Size = new Size(413, 271);
+            Dgv_Materias.TabIndex = 32;
             // 
             // Checkbox_Estado
             // 
-            this.Checkbox_Estado.AutoSize = true;
-            this.Checkbox_Estado.Location = new System.Drawing.Point(206, 179);
-            this.Checkbox_Estado.Name = "Checkbox_Estado";
-            this.Checkbox_Estado.Size = new System.Drawing.Size(15, 14);
-            this.Checkbox_Estado.TabIndex = 31;
-            this.Checkbox_Estado.UseVisualStyleBackColor = true;
+            Checkbox_Estado.AutoSize = true;
+            Checkbox_Estado.Location = new Point(206, 179);
+            Checkbox_Estado.Name = "Checkbox_Estado";
+            Checkbox_Estado.Size = new Size(15, 14);
+            Checkbox_Estado.TabIndex = 31;
+            Checkbox_Estado.UseVisualStyleBackColor = true;
             // 
             // Txt_Codigo
             // 
-            this.Txt_Codigo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Txt_Codigo.Location = new System.Drawing.Point(204, 83);
-            this.Txt_Codigo.Name = "Txt_Codigo";
-            this.Txt_Codigo.Size = new System.Drawing.Size(100, 26);
-            this.Txt_Codigo.TabIndex = 28;
+            Txt_Codigo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Txt_Codigo.Location = new Point(204, 83);
+            Txt_Codigo.Name = "Txt_Codigo";
+            Txt_Codigo.Size = new Size(100, 26);
+            Txt_Codigo.TabIndex = 28;
             // 
             // Txt_Legajo
             // 
-            this.Txt_Legajo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Txt_Legajo.Location = new System.Drawing.Point(206, 130);
-            this.Txt_Legajo.Name = "Txt_Legajo";
-            this.Txt_Legajo.Size = new System.Drawing.Size(100, 26);
-            this.Txt_Legajo.TabIndex = 27;
+            Txt_Legajo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Txt_Legajo.Location = new Point(206, 130);
+            Txt_Legajo.Name = "Txt_Legajo";
+            Txt_Legajo.Size = new Size(100, 26);
+            Txt_Legajo.TabIndex = 27;
             // 
             // Txt_Nombre
             // 
-            this.Txt_Nombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Txt_Nombre.Location = new System.Drawing.Point(204, 212);
-            this.Txt_Nombre.Name = "Txt_Nombre";
-            this.Txt_Nombre.Size = new System.Drawing.Size(100, 26);
-            this.Txt_Nombre.TabIndex = 26;
+            Txt_Nombre.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Txt_Nombre.Location = new Point(204, 212);
+            Txt_Nombre.Name = "Txt_Nombre";
+            Txt_Nombre.Size = new Size(100, 26);
+            Txt_Nombre.TabIndex = 26;
             // 
             // Lbl_Estado
             // 
-            this.Lbl_Estado.AutoSize = true;
-            this.Lbl_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Estado.Location = new System.Drawing.Point(113, 173);
-            this.Lbl_Estado.Name = "Lbl_Estado";
-            this.Lbl_Estado.Size = new System.Drawing.Size(73, 20);
-            this.Lbl_Estado.TabIndex = 24;
-            this.Lbl_Estado.Text = "Estado:";
+            Lbl_Estado.AutoSize = true;
+            Lbl_Estado.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Estado.Location = new Point(113, 173);
+            Lbl_Estado.Name = "Lbl_Estado";
+            Lbl_Estado.Size = new Size(73, 20);
+            Lbl_Estado.TabIndex = 24;
+            Lbl_Estado.Text = "Estado:";
             // 
             // Lbl_Codigo
             // 
-            this.Lbl_Codigo.AutoSize = true;
-            this.Lbl_Codigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Codigo.Location = new System.Drawing.Point(113, 85);
-            this.Lbl_Codigo.Name = "Lbl_Codigo";
-            this.Lbl_Codigo.Size = new System.Drawing.Size(73, 20);
-            this.Lbl_Codigo.TabIndex = 22;
-            this.Lbl_Codigo.Text = "Codigo:";
+            Lbl_Codigo.AutoSize = true;
+            Lbl_Codigo.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Codigo.Location = new Point(113, 85);
+            Lbl_Codigo.Name = "Lbl_Codigo";
+            Lbl_Codigo.Size = new Size(73, 20);
+            Lbl_Codigo.TabIndex = 22;
+            Lbl_Codigo.Text = "Codigo:";
             // 
             // Lbl_Legajo
             // 
-            this.Lbl_Legajo.AutoSize = true;
-            this.Lbl_Legajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Legajo.Location = new System.Drawing.Point(37, 136);
-            this.Lbl_Legajo.Name = "Lbl_Legajo";
-            this.Lbl_Legajo.Size = new System.Drawing.Size(149, 20);
-            this.Lbl_Legajo.TabIndex = 21;
-            this.Lbl_Legajo.Text = "Legajo Profesor:";
+            Lbl_Legajo.AutoSize = true;
+            Lbl_Legajo.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Legajo.Location = new Point(37, 136);
+            Lbl_Legajo.Name = "Lbl_Legajo";
+            Lbl_Legajo.Size = new Size(149, 20);
+            Lbl_Legajo.TabIndex = 21;
+            Lbl_Legajo.Text = "Legajo Profesor:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(-92, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 19);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Dni:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(-92, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 19);
+            label4.TabIndex = 20;
+            label4.Text = "Dni:";
             // 
             // Lbl_Nombre
             // 
-            this.Lbl_Nombre.AutoSize = true;
-            this.Lbl_Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Nombre.Location = new System.Drawing.Point(106, 212);
-            this.Lbl_Nombre.Name = "Lbl_Nombre";
-            this.Lbl_Nombre.Size = new System.Drawing.Size(80, 20);
-            this.Lbl_Nombre.TabIndex = 18;
-            this.Lbl_Nombre.Text = "Nombre:";
+            Lbl_Nombre.AutoSize = true;
+            Lbl_Nombre.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Nombre.Location = new Point(106, 212);
+            Lbl_Nombre.Name = "Lbl_Nombre";
+            Lbl_Nombre.Size = new Size(80, 20);
+            Lbl_Nombre.TabIndex = 18;
+            Lbl_Nombre.Text = "Nombre:";
             // 
             // Btn_Atras
             // 
-            this.Btn_Atras.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Btn_Atras.Location = new System.Drawing.Point(632, 12);
-            this.Btn_Atras.Name = "Btn_Atras";
-            this.Btn_Atras.Size = new System.Drawing.Size(86, 32);
-            this.Btn_Atras.TabIndex = 35;
-            this.Btn_Atras.Text = "Atras";
-            this.Btn_Atras.UseVisualStyleBackColor = true;
-            this.Btn_Atras.Click += new System.EventHandler(this.Btn_Atras_Click);
+            Btn_Atras.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Btn_Atras.Location = new Point(632, 12);
+            Btn_Atras.Name = "Btn_Atras";
+            Btn_Atras.Size = new Size(86, 32);
+            Btn_Atras.TabIndex = 35;
+            Btn_Atras.Text = "Atras";
+            Btn_Atras.UseVisualStyleBackColor = true;
+            Btn_Atras.Click += Btn_Atras_Click;
             // 
             // Lbl_Cruz
             // 
-            this.Lbl_Cruz.AutoSize = true;
-            this.Lbl_Cruz.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Cruz.Location = new System.Drawing.Point(733, 12);
-            this.Lbl_Cruz.Name = "Lbl_Cruz";
-            this.Lbl_Cruz.Size = new System.Drawing.Size(32, 32);
-            this.Lbl_Cruz.TabIndex = 36;
-            this.Lbl_Cruz.Text = "X";
-            this.Lbl_Cruz.Click += new System.EventHandler(this.Lbl_Cruz_Click);
+            Lbl_Cruz.AutoSize = true;
+            Lbl_Cruz.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Lbl_Cruz.Location = new Point(733, 12);
+            Lbl_Cruz.Name = "Lbl_Cruz";
+            Lbl_Cruz.Size = new Size(32, 32);
+            Lbl_Cruz.TabIndex = 36;
+            Lbl_Cruz.Text = "X";
+            Lbl_Cruz.Click += Lbl_Cruz_Click;
             // 
             // Btn_Alegajo
             // 
-            this.Btn_Alegajo.Location = new System.Drawing.Point(582, 412);
-            this.Btn_Alegajo.Name = "Btn_Alegajo";
-            this.Btn_Alegajo.Size = new System.Drawing.Size(111, 26);
-            this.Btn_Alegajo.TabIndex = 38;
-            this.Btn_Alegajo.Text = "Actualizar legajo";
-            this.Btn_Alegajo.UseVisualStyleBackColor = true;
-            this.Btn_Alegajo.Click += new System.EventHandler(this.Btn_Alegajo_Click);
+            Btn_Alegajo.Location = new Point(582, 412);
+            Btn_Alegajo.Name = "Btn_Alegajo";
+            Btn_Alegajo.Size = new Size(111, 26);
+            Btn_Alegajo.TabIndex = 38;
+            Btn_Alegajo.Text = "Actualizar legajo";
+            Btn_Alegajo.UseVisualStyleBackColor = true;
+            Btn_Alegajo.Click += Btn_Alegajo_Click;
             // 
             // Txt_Alegajo
             // 
-            this.Txt_Alegajo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Txt_Alegajo.Location = new System.Drawing.Point(424, 412);
-            this.Txt_Alegajo.Name = "Txt_Alegajo";
-            this.Txt_Alegajo.Size = new System.Drawing.Size(142, 26);
-            this.Txt_Alegajo.TabIndex = 39;
+            Txt_Alegajo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Txt_Alegajo.Location = new Point(424, 412);
+            Txt_Alegajo.Name = "Txt_Alegajo";
+            Txt_Alegajo.Size = new Size(142, 26);
+            Txt_Alegajo.TabIndex = 39;
             // 
             // Btn_Borrar
             // 
-            this.Btn_Borrar.Location = new System.Drawing.Point(690, 331);
-            this.Btn_Borrar.Name = "Btn_Borrar";
-            this.Btn_Borrar.Size = new System.Drawing.Size(75, 32);
-            this.Btn_Borrar.TabIndex = 40;
-            this.Btn_Borrar.Text = "Borrar";
-            this.Btn_Borrar.UseVisualStyleBackColor = true;
-            this.Btn_Borrar.Click += new System.EventHandler(this.Btn_Borrar_Click);
+            Btn_Borrar.Location = new Point(690, 331);
+            Btn_Borrar.Name = "Btn_Borrar";
+            Btn_Borrar.Size = new Size(75, 32);
+            Btn_Borrar.TabIndex = 40;
+            Btn_Borrar.Text = "Borrar";
+            Btn_Borrar.UseVisualStyleBackColor = true;
+            Btn_Borrar.Click += Btn_Borrar_Click;
             // 
             // FormMateria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(801, 464);
-            this.Controls.Add(this.Btn_Borrar);
-            this.Controls.Add(this.Txt_Alegajo);
-            this.Controls.Add(this.Btn_Alegajo);
-            this.Controls.Add(this.Lbl_Cruz);
-            this.Controls.Add(this.Btn_Atras);
-            this.Controls.Add(this.Btn_Cargar);
-            this.Controls.Add(this.Dgv_Materias);
-            this.Controls.Add(this.Checkbox_Estado);
-            this.Controls.Add(this.Txt_Codigo);
-            this.Controls.Add(this.Txt_Legajo);
-            this.Controls.Add(this.Txt_Nombre);
-            this.Controls.Add(this.Lbl_Estado);
-            this.Controls.Add(this.Lbl_Codigo);
-            this.Controls.Add(this.Lbl_Legajo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.Lbl_Nombre);
-            this.Name = "FormMateria";
-            this.Text = "Materias";
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Materias)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Linen;
+            ClientSize = new Size(801, 464);
+            ControlBox = false;
+            Controls.Add(Btn_Borrar);
+            Controls.Add(Txt_Alegajo);
+            Controls.Add(Btn_Alegajo);
+            Controls.Add(Lbl_Cruz);
+            Controls.Add(Btn_Atras);
+            Controls.Add(Btn_Cargar);
+            Controls.Add(Dgv_Materias);
+            Controls.Add(Checkbox_Estado);
+            Controls.Add(Txt_Codigo);
+            Controls.Add(Txt_Legajo);
+            Controls.Add(Txt_Nombre);
+            Controls.Add(Lbl_Estado);
+            Controls.Add(Lbl_Codigo);
+            Controls.Add(Lbl_Legajo);
+            Controls.Add(label4);
+            Controls.Add(Lbl_Nombre);
+            Name = "FormMateria";
+            Text = "Materias";
+            ((System.ComponentModel.ISupportInitialize)Dgv_Materias).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

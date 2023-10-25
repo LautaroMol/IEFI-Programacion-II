@@ -15,11 +15,12 @@ using System.Text.RegularExpressions;
 
 namespace IEFI_Programación_II
 {
-   public partial class FormMateria : Form
+    public partial class FormMateria : Form
     {
         private ListadoMaterias listadoMaterias; // Instancia de la capa de datos
         private string connectionString; // Declaración de la variable connectionString
         private AdministracionMaterias adminMaterias;
+        AdministracionProfesor objProf = new AdministracionProfesor();
 
         // Constructor del formulario que recibe la cadena de conexión
         public FormMateria(string connectionString)
@@ -85,7 +86,19 @@ namespace IEFI_Programación_II
         // Maneja el evento de carga al hacer clic en el botón "Cargar"
         private void Btn_Cargar_Click(object sender, EventArgs e)
         {
-        
+            DataSet ds = objProf.listadoProf("todos");
+            bool enc = false;
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    if (dr[0].ToString() == Txt_Legajo.Text)
+                    {
+                        enc = true;
+                    }
+                }
+                if (!enc) { MessageBox.Show("el legajo no corresponde a ningun profesor"); return; };
+            }
             // Verifica si el código y el legajo son valores numéricos válidos
             if (!int.TryParse(Txt_Codigo.Text, out int codigo) || !int.TryParse(Txt_Legajo.Text, out int legajo))
             {
@@ -314,7 +327,7 @@ namespace IEFI_Programación_II
 
                 if (Dgv_Materias.SelectedRows.Count > 0)
                 {
-                   // Modal de confirmación para asegurarse de la acción.
+                    // Modal de confirmación para asegurarse de la acción.
                     DialogResult resultado = MessageBox.Show("¿Está seguro que desea actualizar el legajo de la materia seleccionada?", "Confirmar actualización de legajo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)

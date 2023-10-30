@@ -1,4 +1,5 @@
-﻿using CapaInstituto;
+﻿using CapaDatos;
+using CapaInstituto;
 using Entidades.Base_de_Datos;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaInstituto;
 
 namespace IEFI_Programación_II.FormProfesor
 {
@@ -17,7 +19,7 @@ namespace IEFI_Programación_II.FormProfesor
     {
         List<Profesor> listaprof = new List<Profesor>();
         AdministracionProfesor objProf = new AdministracionProfesor();
-
+        private ListadoMaterias listadoMaterias;
         public FormProfe()
         {
             InitializeComponent();
@@ -177,9 +179,17 @@ namespace IEFI_Programación_II.FormProfesor
                 MessageBox.Show("Seleccione un profesor para borrar.");
                 return;
             }
+            DataSet ds = listadoMaterias.LisMaterias("Todos");
 
             int legajoSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Legajo"].Value);
-
+            foreach (DataRow mat in ds.Tables[0].Rows) 
+            {
+                if (mat[1].ToString() == legajoSeleccionado.ToString())
+                {
+                    MessageBox.Show("No puede borrarse el profesor porque esta cargado en la siguiente materia: " + mat[3]);
+                    return;
+                }
+            }
             // Eliminar el profesor de la base de datos
             int resultadoEliminacion = objProf.abmProfesores("Borrar", new Profesor(legajoSeleccionado, 0, "", "", false, DateTime.Now));
 

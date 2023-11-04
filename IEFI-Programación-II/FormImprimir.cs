@@ -1,8 +1,6 @@
 ﻿using CapaInstituto;
 using System.Data;
 using System.Drawing.Printing;
-using PdfSharp.Pdf;
-using PdfSharp.Drawing;
 
 
 namespace IEFI_Programación_II

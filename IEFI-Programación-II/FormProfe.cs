@@ -5,12 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaInstituto;
 
 namespace IEFI_Programación_II.FormProfesor
 {
@@ -19,7 +13,7 @@ namespace IEFI_Programación_II.FormProfesor
     {
         List<Profesor> listaprof = new List<Profesor>();
         AdministracionProfesor objProf = new AdministracionProfesor();
-        private ListadoMaterias listadoMaterias;
+
         public FormProfe()
         {
             InitializeComponent();
@@ -33,6 +27,7 @@ namespace IEFI_Programación_II.FormProfesor
 
             ConfigurarDataGridView();
             LlenarDGV();
+            
         }
 
         private void LlenarDGV()
@@ -179,31 +174,44 @@ namespace IEFI_Programación_II.FormProfesor
                 MessageBox.Show("Seleccione un profesor para borrar.");
                 return;
             }
+            DatosdeConexion datosConexion = new DatosdeConexion();
+            string connection = datosConexion.CadenadeConexion.ToString();
+            ListadoMaterias listadoMaterias = new ListadoMaterias(connection);
             DataSet ds = listadoMaterias.LisMaterias("Todos");
 
             int legajoSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Legajo"].Value);
-            foreach (DataRow mat in ds.Tables[0].Rows) 
+
+            // Verificar si el profesor está asociado a alguna materia en el DataSet
+            bool profesorAsociado = false;
+            foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                if (mat[1].ToString() == legajoSeleccionado.ToString())
+                int legajoProfesorMateria = Convert.ToInt32(dr["LegajoProfesor"]);
+                if (legajoProfesorMateria == legajoSeleccionado)
                 {
-                    MessageBox.Show("No puede borrarse el profesor porque esta cargado en la siguiente materia: " + mat[3]);
-                    return;
+                    profesorAsociado = true;
+                    MessageBox.Show("No puede borrarse el profesor porque está cargado en la siguiente materia: " + dr["Nombre"]);
+                    break; // No es necesario seguir verificando si ya encontramos una asociación
                 }
             }
-            // Eliminar el profesor de la base de datos
-            int resultadoEliminacion = objProf.abmProfesores("Borrar", new Profesor(legajoSeleccionado, 0, "", "", false, DateTime.Now));
 
-            if (resultadoEliminacion == -1)
+            if (!profesorAsociado)
             {
-                MessageBox.Show("No se pudo borrar el profesor de la base de datos.");
+                // Eliminar el profesor de la base de datos
+                int resultadoEliminacion = objProf.abmProfesores("Borrar", new Profesor(legajoSeleccionado, 0, "", "", false, DateTime.Now));
+
+                if (resultadoEliminacion == -1)
+                {
+                    MessageBox.Show("No se pudo borrar el profesor de la base de datos.");
+                }
+                else
+                {
+                    // Actualizar el DataGridView después de la eliminación
+                    dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+                    MessageBox.Show("Profesor borrado de la base de datos.");
+                }
+
+                LlenarDGV(); // Asegúrate de volver a cargar los datos en el DataGridView después de la eliminación
             }
-            else
-            {
-                // Actualizar el DataGridView después de la eliminación
-                dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
-                MessageBox.Show("Profesor borrado de la base de datos.");
-            }
-            LlenarDGV();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -28,49 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMat = new System.Windows.Forms.Button();
-            this.btnProf = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            btnMat = new Button();
+            btnProf = new Button();
+            button1 = new Button();
+            SuspendLayout();
             // 
             // btnMat
             // 
-            this.btnMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMat.Location = new System.Drawing.Point(104, 75);
-            this.btnMat.Name = "btnMat";
-            this.btnMat.Size = new System.Drawing.Size(129, 81);
-            this.btnMat.TabIndex = 0;
-            this.btnMat.Text = "Materias";
-            this.btnMat.UseVisualStyleBackColor = true;
-            this.btnMat.Click += new System.EventHandler(this.btnMat_Click);
+            btnMat.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMat.Location = new Point(104, 41);
+            btnMat.Name = "btnMat";
+            btnMat.Size = new Size(129, 81);
+            btnMat.TabIndex = 0;
+            btnMat.Text = "Materias";
+            btnMat.UseVisualStyleBackColor = true;
+            btnMat.Click += btnMat_Click;
             // 
             // btnProf
             // 
-            this.btnProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProf.Location = new System.Drawing.Point(104, 258);
-            this.btnProf.Name = "btnProf";
-            this.btnProf.Size = new System.Drawing.Size(129, 83);
-            this.btnProf.TabIndex = 1;
-            this.btnProf.Text = " Profesores";
-            this.btnProf.UseVisualStyleBackColor = true;
-            this.btnProf.Click += new System.EventHandler(this.btnProf_Click);
+            btnProf.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProf.Location = new Point(104, 169);
+            btnProf.Name = "btnProf";
+            btnProf.Size = new Size(129, 83);
+            btnProf.TabIndex = 1;
+            btnProf.Text = " Profesores";
+            btnProf.UseVisualStyleBackColor = true;
+            btnProf.Click += btnProf_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Microsoft Sans Serif", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(104, 312);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 83);
+            button1.TabIndex = 2;
+            button1.Text = "Registro Instituto";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FormInstituto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(334, 418);
-            this.Controls.Add(this.btnProf);
-            this.Controls.Add(this.btnMat);
-            this.Name = "FormInstituto";
-            this.Text = "Menu";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Linen;
+            ClientSize = new Size(334, 418);
+            Controls.Add(button1);
+            Controls.Add(btnProf);
+            Controls.Add(btnMat);
+            Name = "FormInstituto";
+            Text = "Menu";
+            ResumeLayout(false);
         }
 
         #endregion
 
         private Button btnMat;
         private Button btnProf;
+        private Button button1;
     }
 }

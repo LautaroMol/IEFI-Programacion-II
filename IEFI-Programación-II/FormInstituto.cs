@@ -28,5 +28,14 @@ namespace IEFI_Programación_II
             formMateria.Show();  // Abre el formulario FormMateria
             this.Hide();  // Oculta el formulario actual (el que contiene el botón "btnMat").
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DatosdeConexion datosConexion = new DatosdeConexion();
+            string cadenaConexion = datosConexion.CadenadeConexion;
+            FormImprimir formimprimir = new FormImprimir(cadenaConexion);
+            formimprimir.Show();
+            Hide();
+        }
     }
 }

@@ -51,7 +51,6 @@ namespace CapaDatos
                 throw new Exception("Error al tratar de cerrar la conexión", error);
             }
         }
-
     }
 }
 

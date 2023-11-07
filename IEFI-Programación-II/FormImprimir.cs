@@ -1,7 +1,11 @@
 ﻿using CapaInstituto;
 using System.Data;
 using System.Drawing.Printing;
-
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
+using System.Security.Policy;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace IEFI_Programación_II
 {
@@ -16,6 +20,7 @@ namespace IEFI_Programación_II
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             InitializeComponent();
             listadoMaterias = new ListadoMaterias(connectionString);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -133,63 +138,59 @@ namespace IEFI_Programación_II
             }
             else
             {
-                // Ajustar automáticamente el ancho de las columnas
-                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-                // Crea una instancia de PrintDocument
-                PrintDocument doc = new PrintDocument();
-                doc.PrintPage += new PrintPageEventHandler(PrintPage);
-
-                // Configura el cuadro de diálogo de impresión
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-                printPreviewDialog.Document = doc;
-
-                // Muestra el cuadro de diálogo de vista previa de impresión
-                currentRow = 0; // Restablece la posición de impresión
-                printPreviewDialog.ShowDialog();
-            }
-        }
-
-        private void PrintPage(object sender, PrintPageEventArgs e)
-        {
-            DataGridView dataGridView = dataGridView1;
-            DataGridViewRow row;
-
-            Font font = new Font("Arial", 8);
-            float margin = 40;
-            float y = margin;
-            float lineOffset = font.GetHeight() + 10;
-            Brush brush = new SolidBrush(Color.Black);
-            Pen pen = new Pen(Color.Black); // Línea negra
-
-            for (int i = 0; i < dataGridView.Columns.Count; i++)
-            {
-                e.Graphics.DrawString(dataGridView.Columns[i].HeaderText, font, brush, margin + (i * 120), y);
-            }
-
-            y += lineOffset;
-
-            // Dibujar una línea negra debajo de los títulos de las columnas
-            e.Graphics.DrawLine(pen, margin, y, e.MarginBounds.Right, y);
-            y += 5; // Espacio adicional después de la línea
-
-            while (currentRow < dataGridView.Rows.Count)
-            {
-                row = dataGridView.Rows[currentRow];
-                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = "Output.pdf";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    e.Graphics.DrawString(row.Cells[i].Value.ToString(), font, brush, margin + (i * 120), y);
-                }
-                y += lineOffset;
-                currentRow++;
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        } catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("no pudo guardarse el archivo");
+                        }
+                    }
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            PdfPTable pdfTable = new PdfPTable(dataGridView1.Columns.Count);
+                            pdfTable.DefaultCell.Padding = 3;
+                            pdfTable.WidthPercentage = 100;
+                            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-                if (y + lineOffset > e.MarginBounds.Height)
-                {
-                    e.HasMorePages = true;
-                    return;
+                            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                                pdfTable.AddCell(cell);
+                            }
+                            foreach (DataGridViewRow row in dataGridView1.Rows)
+                            {
+                                foreach (DataGridViewCell cell in row.Cells)
+                                {
+                                    pdfTable.AddCell(cell.Value.ToString());
+                                }
+                            }
+
+                            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
+                            {
+                                Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+                                PdfWriter.GetInstance(pdfDoc, stream);
+                                pdfDoc.Open();
+                                pdfDoc.Add(pdfTable);
+                                pdfDoc.Close();
+                                stream.Close();
+                            }
+                            MessageBox.Show("archivo guardado exitosamente", "Info");
+                        }
+                        catch (Exception ex) { MessageBox.Show("error: " + ex.Message); } }
                 }
             }
-            e.HasMorePages = false;
         }
     }
 }

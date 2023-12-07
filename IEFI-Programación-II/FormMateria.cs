@@ -22,6 +22,7 @@ namespace IEFI_Programación_II
         private AdministracionMaterias adminMaterias;
         AdministracionProfesor objProf = new AdministracionProfesor();
 
+
         // Constructor del formulario que recibe la cadena de conexión
         public FormMateria(string connectionString)
         {
@@ -105,9 +106,8 @@ namespace IEFI_Programación_II
                 MessageBox.Show("Ingrese valores válidos para el código y el legajo, que solo contengan números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // Obtiene el nombre y el estado de la materia desde los TextBox
-            string nombre = Txt_Nombre.Text;
-            bool estado = Checkbox_Estado.Checked;
+
+
 
             // Validacion de código y legajo unicos
             if (!EsCodigoUnico(codigo))
